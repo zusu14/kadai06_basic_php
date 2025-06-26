@@ -2,7 +2,8 @@
 var_dump($_POST);
 $nickname = $_POST["nickname"];
 $comment = $_POST["comment"];
-$write_data="{$nickname},{$comment}\n";
+$datetime = date('Y-m-d H:i:s');
+$write_data="{$nickname},{$comment},{$datetime}\n";
 // var_dump($write_data);
 
 // ファイルを開く（フル権限）
@@ -18,4 +19,4 @@ fclose($file);
 
 // データ入力画面に移動
 header("Location:index.php");
-
+exit();
